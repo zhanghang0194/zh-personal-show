@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2022/10/08 17:14:47
+// Create Date: 2022/10/11 17:24:33
 // Design Name: 
-// Module Name: cpu_top
+// Module Name: Multiplexer5
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,16 +20,11 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module cpu_top(
-
-    );
-ctrl_unit u_ctrl_unit();
-alu u_alu();
-d_mem u_d_mem();
-i_mem u_i_mem();
-pc_reg u_pc_reg();
-regfile u_regfile();
-SignZeroExtend u_SignZeroExtend();
-Multiplexer5 u_Multiplexer5();
-Multiplexer32 u_Multiplexer32();
+module Multiplexer5(
+	input Select,
+	input[4:0] DataIn1,
+	input[4:0] DataIn2,
+	output[4:0] DataOut
+);
+	assign DataOut=	Select?DataIn2:DataIn1;
 endmodule

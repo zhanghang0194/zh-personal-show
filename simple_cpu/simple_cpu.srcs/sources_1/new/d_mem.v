@@ -10,6 +10,10 @@
 // Target Devices: 
 // Tool Versions: 
 // Description: 
+//              该部分控制内存存储，用于内存存储、读写。
+//              用 255 大小的 8 位寄存器数组模拟内存，采用小端模式。
+//              DataMenRW 控制内存读写。
+//              由于指令为真实地址，所以不需要<<2。
 // 
 // Dependencies: 
 // 
@@ -32,16 +36,20 @@ module d_mem
     input [d_data_width-1:0] d_data_in,
     output[d_data_width-1:0] d_data_out
     );
-reg[d_data_width-1:0] mem [d_addr_width-1:0];
-always@(posedge clk)
-    if(d_mem_wr) 
-        mem[d_addr] <= d_data_in;
-    else
-        mem[d_addr] <=  mem[d_addr];
+reg[7:0] mem [255:0];
+always@(negedge clk)
+    if(d_mem_wr) begin
+        mem[d_addr+3] <= d_data_in[7:0];
+        mem[d_addr+2] <= d_data_in[15:8];
+        mem[d_addr+1] <= d_data_in[23:16];
+        mem[d_addr+0] <= d_data_in[31:24];
+    end
         
-always@(posedge clk)
-    if(d_mem_rd) 
-        d_data_out <= mem[d_addr];
-    else
-        d_data_out <=  0;
+always@(d_mem_rd or d_addr)     //电平触发？
+    if(d_mem_rd) begin
+        d_data_out[7:0]   = mem[d_addr+3];
+        d_data_out[15:8]  = mem[d_addr+2];
+        d_data_out[23:16] = mem[d_addr+1];
+        d_data_out[31:24] = mem[d_addr+0];
+    end
 endmodule
