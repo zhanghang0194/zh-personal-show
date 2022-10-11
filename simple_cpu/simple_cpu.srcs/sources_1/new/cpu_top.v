@@ -23,7 +23,7 @@
 module cpu_top(
 
     );
-ctrl_unit u_ctrl_unit();  
+ctrl_unit u_ctrl_unit();
 alu u_alu();
 d_mem u_d_mem();
 i_mem u_i_mem();
