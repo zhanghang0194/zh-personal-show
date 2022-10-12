@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2022/10/11 17:12:49
+// Create Date: 2022/10/12 13:53:52
 // Design Name: 
-// Module Name: SignZeroExtend
+// Module Name: Sim1
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,16 +20,17 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module SignZeroExtend
-#(  parameter IMME_WIDTH = 16,
-    parameter EXTEND_WIDTH =32
-)
-(
-    input [IMME_WIDTH-1:0] immediate,
-    input Extsel,
+module Sim1();
+logic clk;
+logic rstn;
+cpu_top u_cpu_top(clk,rstn);
+always #30 clk = ~clk;
+
+initial begin
+    rstn = 0;
     
-    output [EXTEND_WIDTH-1:0] s_z_extend
-    );
-    assign s_z_extend = {Exsel&&immediate[15]? 16'hffff:16'h0000,immediate};
+    #5 rstn = 1;   
     
+end
+
 endmodule

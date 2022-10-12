@@ -43,9 +43,15 @@ module i_mem
     output [i_mem_data_width-1:0]i_mem_data_out
     );
     reg[7:0] mem [255:0];
+    //通过一个 256 大小的 8 位寄存器数组来保存从文件输入的全部指令。
+    //然后通过输入的地址，找到相应的指令，输出到 IDataOut。
+    
+    //初始化指令寄存器，将对应内容与指令进行匹配，工作过程中不进行写操作
+    
     initial begin //绝对地址
         $readmemb("D:/Study_SOC/Simple_CPU/ins_mem.txt",mem);
     end
+    //地址变化  or  读控制信号拉低，进行读操作
     always @(i_mem_addr or i_mem_rw)
         if(i_mem_rw ==0)i_mem_data_out = {mem[i_mem_addr],mem[i_mem_addr+1],mem[i_mem_addr+2],mem[i_mem_addr+3]};
 
