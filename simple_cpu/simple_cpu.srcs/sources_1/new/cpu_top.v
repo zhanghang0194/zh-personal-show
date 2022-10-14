@@ -34,31 +34,26 @@ module cpu_top
 )
 (
     input clk,
-    input rstn,
+    input rstn
     
-    output reg [addr_width-1:0]PC_addr,//当前指令地址
-//	output[31:0] newaddress,	//下一个指令地址
-	output[31:0] i_mem_data_out,	//rs,rt寄存器所在指令
-	output[31:0] Read_Reg1,	//寄存器组rs寄存器的值
-	output[31:0] Read_Reg2,	//寄存器组rt寄存器的值
-	output[31:0] Result,	//ALU的result输出值
-	output[31:0] Write_Data	//DB总线值
+
     );
-wire [5:0] op;
+
 wire [2:0] ALUop;
 wire [1:0] PCmux;
 wire zero,sign,ALU_SrcA,ALU_SrcB,regf_wri_reg,regf_wri_data,
 d_mem_wr,d_mem_rd,i_mem_rw,regf_wre,Extsel,PC_wre;
-
+wire [i_mem_data_width-1:0]i_mem_data_in;
+wire [i_mem_data_width-1:0]i_mem_data_out;
 
 ctrl_unit u_ctrl_unit(
-.op(op),
+.op(i_mem_data_out[31:26]),
 .zero(zero),             //zero=1，运算结果为0
 .sign(sign),             //sign=0, 运算结果为正数
 .ALUop(ALUop),      //ALU功能指令：加/减/左移/或/与/sign比较/unsign比较/异或 ，8个
 .PCmux(PCmux),      //PC指令多选器：PC+4、PC+ext、PC+addr
-.ALUsrcA(ALUsrcA),         //ALU A口输入多选 RegD1 or sa
-.ALUsrcB(ALUsrcB),         //ALU B口输入多选 RegD2 or ext
+.ALUsrcA(ALU_SrcA),         //ALU A口输入多选 RegD1 or sa
+.ALUsrcB(ALU_SrcB),         //ALU B口输入多选 RegD2 or ext
 .regf_wri_reg(regf_wri_reg),    //rt  or  rd
 .regf_wri_data(regf_wri_data),   //result  or  d_mem_out
 .d_mem_wr(d_mem_wr),        //写数据寄存器SW
@@ -70,13 +65,12 @@ ctrl_unit u_ctrl_unit(
 );
 
 wire [DATA_WIDTH-1:0] Regf_data1;
-wire [DATA_WIDTH-1:0] sa;
 wire [DATA_WIDTH-1:0] Regf_data2;
 wire [DATA_WIDTH-1:0] s_z_extend;
 wire [DATA_WIDTH-1:0] Result;
 alu u_alu(
 .Regf_data1(Regf_data1),
-.sa(sa),
+.sa(i_mem_data_out[10:6]),
 .Regf_data2(Regf_data2),
 .s_z_extend(s_z_extend),    
 .ALU_op(ALUop),
@@ -88,31 +82,21 @@ alu u_alu(
 .Result(Result)
 );
 
-wire [d_addr_width-1:0] d_addr;
-wire [d_data_width-1:0] d_data_in;
 wire [d_data_width-1:0] d_data_out;
 
 d_mem u_d_mem(
 .clk(clk),
 .d_mem_wr(d_mem_wr),
 .d_mem_rd(d_mem_rd),
-.d_addr(d_addr),
-.d_data_in(d_data_in),
+.d_addr(Result),
+.d_data_in(Regf_data2),
 .d_data_out(d_data_out)
 );
-wire [i_mem_addr_width-1:0]i_mem_addr;
-wire [i_mem_data_width-1:0]i_mem_data_in;
-wire [i_mem_data_width-1:0]i_mem_data_out;
 
-i_mem u_i_mem(
-.i_mem_rw(i_mem_rw),
-.i_mem_addr(i_mem_addr),
-.i_mem_data_in(i_mem_data_in),
-.i_mem_data_out(i_mem_data_out)
-);
+
 
 wire [25:0]d_mem_out;      //addr
-wire PC_wre;
+
 
 wire [addr_width-1:0] PC_addr;
 pc_reg u_pc_reg(
@@ -120,9 +104,17 @@ pc_reg u_pc_reg(
 .rstn(rstn),
 .PC_wre(PC_wre),
 .PCMux(PCmux),
-.d_mem_out(d_data_out),      //addr
-.s_z_extend(s_z_extend),     //imme
+.i_mem_out(i_mem_data_out[25:0]),       //addr
+.s_z_extend(s_z_extend),                //imme
 .PC_addr(PC_addr)
+);
+
+
+i_mem u_i_mem(
+.i_mem_rw(i_mem_rw),
+.i_mem_addr(PC_addr),
+.i_mem_data_in(i_mem_data_in),
+.i_mem_data_out(i_mem_data_out)
 );
 
 Multiplexer5 u_Multiplexer5(
@@ -165,7 +157,7 @@ SignZeroExtend u_SignZeroExtend(
 Multiplexer32 u_Multiplexer32(
 .Select(regf_wri_data),
 .DataIn1(Result),
-.DataIn2(d_mem_out),
+.DataIn2(d_data_out),
 .DataOut(Write_Data)
 );
 endmodule

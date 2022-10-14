@@ -31,8 +31,8 @@ module ctrl_unit(
 input [5:0] op,
 input zero,             //zero=1，运算结果为0
 input sign,             //sign=0, 运算结果为正数
-output [2:0]ALUop,      //ALU功能指令：加/减/左移/或/与/sign比较/unsign比较/异或 ，8个
-output [1:0]PCmux,      //PC指令多选器：PC+4、PC+ext、PC+addr
+output reg [2:0]ALUop,      //ALU功能指令：加/减/左移/或/与/sign比较/unsign比较/异或 ，8个
+output reg [1:0]PCmux,      //PC指令多选器：PC+4、PC+ext、PC+addr
 output ALUsrcA,         //ALU A口输入多选 RegD1 or sa
 output ALUsrcB,         //ALU B口输入多选 RegD2 or ext
 output regf_wri_reg,    //rt  or  rd
@@ -81,17 +81,17 @@ assign regf_wri_data = op== LW; //op（数据存储器的输出相关）
 assign regf_wri_reg = op!=ADDIU && op!=ANDI && op!=ORI && op!=SLTI && op!=LW;//op(写寄存器组的地址，0来自rt（立即数相关），1来自rd)
 always@(*)
     case(op)
-        J: PCmux = 10;//pc <= {(pc+4)[31:28],addr[27:2],2'b00};
-        BEQ:if(zero==1) PCmux = 01;//pc <= pc +4 +(sign-ext)imme <<2
-        BNE:if(zero==0) PCmux = 01;
-        BLTZ:if(sign==1) PCmux = 01;
-        default: PCmux = 00;
+        J: PCmux = 'b10;//pc <= {(pc+4)[31:28],addr[27:2],2'b00};
+        BEQ:if(zero==1) PCmux = 'b01;//pc <= pc +4 +(sign-ext)imme <<2
+        BNE:if(zero==0) PCmux = 'b01;
+        BLTZ:if(sign==1) PCmux = 'b01;
+        default: PCmux = 'b00;
     endcase
-//	assign PCmux[0]=	op==J;
-//	assign PCmux[1]=	op==BEQ&&zero==1||op==BNE&&zero==0||op==BLTZ&&sign==1;
+//assign PCmux[0]=	op==J;
+//assign PCmux[1]=	op==BEQ&&zero==1||op==BNE&&zero==0||op==BLTZ&&sign==1;
 assign d_mem_wr = op==SW;//数据存储器的输出相关(写)rt->（rs+imm）
 assign d_mem_rd = op==LW;//数据存储器的输出相关(读)（rs+imm）->rt
-assign i_mem_rw = op==0;//始终写，指令寄存器不涉及读写逻辑变化？
+assign i_mem_rw = 0;//始终写，指令寄存器不涉及读写逻辑变化？
 assign regf_wre = op!=BEQ && op!=BNE && op!=BLTZ && op!=SW && op!= HALT;//寄存器组写使能信号
 assign Extsel = op!=ANDI && op!=ORI;//=0:zero-extend,0扩展;=1:sign-extend 符号扩展
 always@(*)

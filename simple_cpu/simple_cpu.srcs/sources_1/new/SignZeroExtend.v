@@ -30,6 +30,6 @@ module SignZeroExtend
     
     output [EXTEND_WIDTH-1:0] s_z_extend
     );
-    assign s_z_extend = {Exsel&&immediate[15]? 16'hffff:16'h0000,immediate};
+    assign s_z_extend = {Extsel&&immediate[15]? 16'hffff:16'h0000,immediate};
     
 endmodule

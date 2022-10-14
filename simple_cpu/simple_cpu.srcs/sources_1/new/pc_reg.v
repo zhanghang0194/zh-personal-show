@@ -27,19 +27,22 @@ module pc_reg
     input rstn,
     input PC_wre,
     input [1:0]PCMux,
-    input [25:0]d_mem_out,      //addr
+    input [25:0]i_mem_out,      //addr
     input [31:0]s_z_extend,     //imme
     
     output reg [addr_width-1:0] PC_addr
     );
 parameter IDLE =32'H0000;  
 
+reg [addr_width-1:0] PC;
+wire [addr_width-1:0] PC_4;
+
 always@(*)
     case(PCMux)
-    00: PC = PC_4;
-    01: PC = PC_4 + (s_z_extend<<2);
-    10: PC = {PC_4[31:28],d_mem_out[27:2],0,0};
-    default : PC_addr <= 'HX;
+    'b00: PC = PC_4;
+    'b01: PC = PC_4 + {s_z_extend[29:0],0,0};
+    'b10: PC = {PC_4[31:28],i_mem_out,2'b00};
+    default : PC = 'hx;
     endcase
 
 always@(posedge clk or negedge rstn)

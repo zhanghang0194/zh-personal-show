@@ -34,7 +34,7 @@ module d_mem
     input d_mem_rd,
     input [d_addr_width-1:0] d_addr,
     input [d_data_width-1:0] d_data_in,
-    output[d_data_width-1:0] d_data_out
+    output reg[d_data_width-1:0] d_data_out
     );
 reg[7:0] mem [255:0];   //用 255 大小的 8 位寄存器数组模拟内存，采用小端模式。
 //写操作，在时钟下降沿写入数据

@@ -27,9 +27,10 @@ cpu_top u_cpu_top(clk,rstn);
 always #30 clk = ~clk;
 
 initial begin
+    clk = 0;
     rstn = 0;
     
-    #5 rstn = 1;   
+    #50 rstn = 1;   
     
 end
 

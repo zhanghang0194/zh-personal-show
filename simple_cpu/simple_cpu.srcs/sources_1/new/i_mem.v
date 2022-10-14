@@ -40,7 +40,7 @@ module i_mem
     input i_mem_rw,
     input [i_mem_addr_width-1:0]i_mem_addr,
     input [i_mem_data_width-1:0]i_mem_data_in,
-    output [i_mem_data_width-1:0]i_mem_data_out
+    output reg [i_mem_data_width-1:0]i_mem_data_out
     );
     reg[7:0] mem [255:0];
     //通过一个 256 大小的 8 位寄存器数组来保存从文件输入的全部指令。
@@ -49,7 +49,7 @@ module i_mem
     //初始化指令寄存器，将对应内容与指令进行匹配，工作过程中不进行写操作
     
     initial begin //绝对地址
-        $readmemb("D:/Study_SOC/Simple_CPU/ins_mem.txt",mem);
+        $readmemb("D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/ins_mem.txt",mem);
     end
     //地址变化  or  读控制信号拉低，进行读操作
     always @(i_mem_addr or i_mem_rw)

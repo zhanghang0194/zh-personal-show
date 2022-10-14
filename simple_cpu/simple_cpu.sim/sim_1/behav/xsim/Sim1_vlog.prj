@@ -1,0 +1,21 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../simple_cpu.srcs/sources_1/new/Multiplexer32.v" \
+"../../../../simple_cpu.srcs/sources_1/new/Multiplexer5.v" \
+"../../../../simple_cpu.srcs/sources_1/new/SignZeroExtend.v" \
+"../../../../simple_cpu.srcs/sources_1/new/cpu_top.v" \
+"../../../../simple_cpu.srcs/sources_1/new/ctrl_unit.v" \
+"../../../../simple_cpu.srcs/sources_1/new/d_mem.v" \
+"../../../../simple_cpu.srcs/sources_1/new/i_mem.v" \
+"../../../../simple_cpu.srcs/sources_1/new/pc_reg.v" \
+"../../../../simple_cpu.srcs/sources_1/new/regfile.v" \
+
+sv xil_defaultlib  \
+"../../../../simple_cpu.srcs/sources_1/new/alu.sv" \
+"../../../../simple_cpu.srcs/sim_1/new/Sim1.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
