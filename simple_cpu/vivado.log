@@ -38,3 +38,115 @@ INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/SYSTEM_SOFTWARE/Xilinx/Vivado/2022.1/data/ip'.
 open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:07 . Memory (MB): peak = 1660.602 ; gain = 0.000
 update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-12493] Simulation top is 'Sim1'
+WARNING: [Vivado 12-13340] Unable to auto find GCC executables from simulator install path! (path not set)
+WARNING: [Vivado 12-13277] Compiled library path does not exist: ''
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-72] Using boost library from 'D:/SYSTEM_SOFTWARE/Xilinx/Vivado/2022.1/tps/boost_1_72_0'
+INFO: [SIM-utils-54] Inspecting design source files for 'Sim1' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.sim/sim_1/behav/xsim/ins_mem.txt'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj Sim1_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/Multiplexer32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Multiplexer32
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/Multiplexer5.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Multiplexer5
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/SignZeroExtend.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SignZeroExtend
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/cpu_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cpu_top
+WARNING: [VRFC 10-2938] 'Write_Reg' is already implicitly declared on line 124 [D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/cpu_top.v:127]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/ctrl_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ctrl_unit
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/d_mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module d_mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/i_mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module i_mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/pc_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc_reg
+WARNING: [VRFC 10-8864] concatenation with an unsized literal will be treated as 32 bits [D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/pc_reg.v:43]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.sim/sim_1/behav/xsim'
+"xelab --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot Sim1_behav xil_defaultlib.Sim1 xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: D:/SYSTEM_SOFTWARE/Xilinx/Vivado/2022.1/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot Sim1_behav xil_defaultlib.Sim1 xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-8864] concatenation with an unsized literal will be treated as 32 bits [D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/pc_reg.v:43]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.ctrl_unit
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.d_mem
+Compiling module xil_defaultlib.pc_reg
+Compiling module xil_defaultlib.i_mem
+Compiling module xil_defaultlib.Multiplexer5
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.SignZeroExtend
+Compiling module xil_defaultlib.Multiplexer32
+Compiling module xil_defaultlib.cpu_top
+Compiling module xil_defaultlib.Sim1
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Sim1_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Sim1_behav -key {Behavioral:sim_1:Functional:Sim1} -tclbatch {Sim1.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Time resolution is 1 ps
+source Sim1.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Sim1_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1660.602 ; gain = 0.000
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/Sim1/u_cpu_top/u_ctrl_unit}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 2 us
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/Sim1/u_cpu_top/u_pc_reg}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 2 us
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/Sim1/u_cpu_top/u_i_mem/i_mem_data_out}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 2 us
+current_wave_config {Untitled 1}
+Untitled 1
+add_wave {{/Sim1/u_cpu_top/u_regfile/registers}} 
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 2 us
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Oct 17 17:02:03 2022...

@@ -13,3 +13,22 @@
 start_gui
 open_project D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.xpr
 update_compile_order -fileset sources_1
+launch_simulation
+source Sim1.tcl
+current_wave_config {Untitled 1}
+add_wave {{/Sim1/u_cpu_top/u_ctrl_unit}} 
+restart
+run 2 us
+current_wave_config {Untitled 1}
+add_wave {{/Sim1/u_cpu_top/u_pc_reg}} 
+restart
+run 2 us
+current_wave_config {Untitled 1}
+add_wave {{/Sim1/u_cpu_top/u_i_mem/i_mem_data_out}} 
+restart
+run 2 us
+current_wave_config {Untitled 1}
+add_wave {{/Sim1/u_cpu_top/u_regfile/registers}} 
+restart
+run 2 us
+close_sim

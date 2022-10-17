@@ -8,7 +8,7 @@ D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/Multiplexer32.v
 D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/Multiplexer5.v,1665480330,verilog,,D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/SignZeroExtend.v,,Multiplexer5,,uvm,,,,,,
 D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/SignZeroExtend.v,1665624937,verilog,,D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/cpu_top.v,,SignZeroExtend,,uvm,,,,,,
 D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/alu.sv,1665642629,systemVerilog,,D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sim_1/new/Sim1.sv,,alu,,uvm,,,,,,
-D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/cpu_top.v,1665717320,verilog,,D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/ctrl_unit.v,,cpu_top,,uvm,,,,,,
+D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/cpu_top.v,1665732971,verilog,,D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/ctrl_unit.v,,cpu_top,,uvm,,,,,,
 D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/ctrl_unit.v,1665627694,verilog,,D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/d_mem.v,,ctrl_unit,,uvm,,,,,,
 D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/d_mem.v,1665625461,verilog,,D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/i_mem.v,,d_mem,,uvm,,,,,,
 D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/i_mem.v,1665625783,verilog,,D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.srcs/sources_1/new/pc_reg.v,,i_mem,,uvm,,,,,,
