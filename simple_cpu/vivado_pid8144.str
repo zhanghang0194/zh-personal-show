@@ -1,0 +1,113 @@
+/*
+
+Xilinx Vivado v2022.1 (64-bit) [Major: 2022, Minor: 1]
+SW Build: 3526262 on Mon Apr 18 15:48:16 MDT 2022
+IP Build: 3524634 on Mon Apr 18 20:55:01 MDT 2022
+
+Process ID (PID): 8144
+License: Customer
+Mode: GUI Mode
+
+Current time: 	Mon Oct 17 16:37:05 CST 2022
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 125
+Available screens: 1
+Default font: family=Dialog,name=Dialog,style=plain,size=15
+Scale size: 19
+
+Java version: 	11.0.11 64-bit
+Java home: 	D:/SYSTEM_SOFTWARE/Xilinx/Vivado/2022.1/tps/win64/jre11.0.11_9
+Java executable: 	D:/SYSTEM_SOFTWARE/Xilinx/Vivado/2022.1/tps/win64/jre11.0.11_9/bin/java.exe
+Java arguments: 	[-Dsun.java2d.pmoffscreen=false, -Dhttps.protocols=TLSv1,TLSv1.1,TLSv1.2, -Dsun.java2d.xrender=false, -Dsun.java2d.d3d=false, -Dsun.awt.nopixfmt=true, -Dsun.java2d.dpiaware=true, -Dsun.java2d.uiScale.enabled=false, -Xverify:none, -Dswing.aatext=true, -XX:-UsePerfData, -Djdk.map.althashing.threshold=512, -XX:StringTableSize=4072, --add-opens=java.desktop/com.sun.awt=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.base/java.nio=ALL-UNNAMED, --add-opens=java.desktop/sun.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-opens=java.desktop/javax.swing=ALL-UNNAMED, --add-opens=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-opens=java.desktop/java.awt.event=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.base/java.nio=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.tree=ALL-UNNAMED, --add-exports=java.desktop/javax.swing.plaf.basic=ALL-UNNAMED, --add-exports=java.desktop/sun.swing=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.table=ALL-UNNAMED, --add-exports=java.desktop/sun.swing.plaf.synth=ALL-UNNAMED, --add-exports=java.desktop/sun.awt.shell=ALL-UNNAMED, --add-exports=java.base/sun.security.action=ALL-UNNAMED, --add-exports=java.desktop/sun.font=ALL-UNNAMED, -XX:NewSize=60m, -XX:MaxNewSize=60m, -Xms256m, -Xmx3072m, -Xss5m]
+Java initial memory (-Xms): 	256 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	32761
+User home directory: C:/Users/32761
+User working directory: D:/Study_SOC/Simple_CPU/simple_cpu
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: D:/SYSTEM_SOFTWARE/Xilinx/Vivado
+HDI_APPROOT: D:/SYSTEM_SOFTWARE/Xilinx/Vivado/2022.1
+RDI_DATADIR: D:/SYSTEM_SOFTWARE/Xilinx/Vivado/2022.1/data
+RDI_BINDIR: D:/SYSTEM_SOFTWARE/Xilinx/Vivado/2022.1/bin
+
+Vivado preferences file: C:/Users/32761/AppData/Roaming/Xilinx/Vivado/2022.1/vivado.xml
+Vivado preferences directory: C:/Users/32761/AppData/Roaming/Xilinx/Vivado/2022.1/
+Vivado layouts directory: C:/Users/32761/AppData/Roaming/Xilinx/Vivado/2022.1/data/layouts
+PlanAhead jar file: 	D:/SYSTEM_SOFTWARE/Xilinx/Vivado/2022.1/lib/classes/planAhead.jar
+Vivado log file: 	D:/Study_SOC/Simple_CPU/simple_cpu/vivado.log
+Vivado journal file: 	D:/Study_SOC/Simple_CPU/simple_cpu/vivado.jou
+Engine tmp dir: 	D:/Study_SOC/Simple_CPU/simple_cpu/.Xil/Vivado-8144-DESKTOP-Q1EFAHP
+
+Xilinx Environment Variables
+----------------------------
+XILINX: D:/SYSTEM_SOFTWARE/Xilinx/Vivado/2022.1/ids_lite/ISE
+XILINX_DSP: D:/SYSTEM_SOFTWARE/Xilinx/Vivado/2022.1/ids_lite/ISE
+XILINX_HLS: D:/SYSTEM_SOFTWARE/Xilinx/Vitis_HLS/2022.1
+XILINX_PLANAHEAD: D:/SYSTEM_SOFTWARE/Xilinx/Vivado/2022.1
+XILINX_SDK: D:/SYSTEM_SOFTWARE/Xilinx/Vitis/2022.1
+XILINX_VITIS: D:/SYSTEM_SOFTWARE/Xilinx/Vitis/2022.1
+XILINX_VIVADO: D:/SYSTEM_SOFTWARE/Xilinx/Vivado/2022.1
+XILINX_VIVADO_HLS: D:/SYSTEM_SOFTWARE/Xilinx/Vivado/2022.1
+
+
+GUI allocated memory:	352 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,468 MB
+
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 68 MB (+69321kb) [00:00:07]
+// [Engine Memory]: 1,468 MB (+1387518kb) [00:00:07]
+// Opening Vivado Project: D:\Study_SOC\Simple_CPU\simple_cpu\simple_cpu.xpr. Version: Vivado v2022.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// TclEventType: FLOW_ADDED
+// Tcl Message: open_project D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.xpr 
+// Tcl Message: INFO: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'D:/Study_SOC/Simple_CPU/simple_cpu/simple_cpu.gen/sources_1'. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 95 MB (+24468kb) [00:00:12]
+// [GUI Memory]: 112 MB (+12962kb) [00:00:14]
+// WARNING: HEventQueue.dispatchEvent() is taking  2712 ms.
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/SYSTEM_SOFTWARE/Xilinx/Vivado/2022.1/data/ip'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,468 MB. GUI used memory: 67 MB. Current time: 10/17/22, 4:37:09 PM CST
+// Project name: simple_cpu; location: D:/Study_SOC/Simple_CPU/simple_cpu; part: xc7z020clg400-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:18 ; elapsed = 00:00:07 . Memory (MB): peak = 1660.602 ; gain = 0.000 
+dismissDialog("Open Project"); // bA
+// [GUI Memory]: 124 MB (+6330kb) [00:00:15]
+// Tcl Message: update_compile_order -fileset sources_1 
